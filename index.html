@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="topNav">
+        <div class="logo">ShopEase</div>
+        <ul class="nav-links">
+            <li><a href="#home"></a>Home</li>
+            <li><a href="#products"></a>Products</li>
+            <li><a href="#deals"></a>Deals</li>
+            <li><a href="#contact"></a>Contact</li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Search-products...">
+            <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </div>
+        <div class="icons">
+            <a href="login.html" class="icon"><i class="fa-solid fa-user-tie"></i></a>
+            <div id="basket-menu" class="basket-menu">
+                <h2>Shopping Cart</h2>
+                <br><br>
+                <ul id="cart-items">
+                    <!-- It will be manipulated by javascript for display in the cart -->
+                </ul>
+                <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()"><i class="fa-solid fa-x"></i></a>
+            </div>
+            <span onclick="openNav()">
+                <i class="fa-solid fa-basket-shopping"></i>
+            </span>
+            <ul id="cart-items"></ul>
+            <span id="productsQuantity">0</span>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+    </nav>
+    <section id="products" class="products">
+        <h1>Our Products</h1>
+        <div class="all-products">
+            <div class="product">
+                <img class="m-images" src="./images/AirPod-2nd-Gen.jpg" alt="airpod">
+                <div class="product-info">
+                    <br>
+                    <h4 class="product-title">Airpod 2nd Gen</h4>
+                    <p class="product-price">$68</p>
+                    <a href="#" class="product-btn" onclick="addToCart('Airpod 2nd Gen', 68.00, 'images/AirPod-2nd-Gen.jpg')">Add To Cart</a>
+                </div>
+            </div>
+            <div class="product">
+                <img class="m-images" src="./images/apple-watch-pcq.jpg" alt="apple watch">
+                <div class="product-info">
+                    <br>
+                    <h4 class="product-title">Smart Black Watch</h4>
+                    <p class="product-price">$50</p>
+                    <a href="#" class="product-btn" onclick="addToCart('Smart Black Watch', 50.00, 'images/apple-watch-pcq.jpg')">Add To Cart</a>
+                </div>
+            </div>
+            <div class="product">
+                <img class="m-images" src="./images/Samsung_Galaxy_s_21_ultra.jpg" alt="samsung">
+                <div class="product-info">
+                    <br>
+                    <h4 class="product-title">Samsung Galaxy s 21 ultra</h4>
+                    <p class="product-price">$280</p>
+                    <a href="#" class="product-btn" onclick="addToCart('Samsung Galaxy s 21 ultra', 280.00, 'images/Samsung_Galaxy_s_21_ultra.jpg')">Add To Cart</a>
+                </div>
+            </div>
+            <div class="product">
+                <img class="m-images" src="./images/Xiaomi_Mi_11_Ultra.jpg" alt="airpod">
+                <div class="product-info">
+                    <br>
+                    <h4 class="product-title">Xiaomi Mi 11 Ultra</h4>
+                    <p class="product-price">$900</p>
+                    <a href="#" class="product-btn" onclick="addToCart('Xiaomi Mi 11 Ultra', 900.00, 'images/Xiaomi_Mi_11_Ultra.jpg')">Add To Cart</a>
+                </div>
+            </div>
+            <div class="product">
+                <img class="m-images" src="./images/iPhone-13-promax.jfif" alt="iphone">
+                <div class="product-info">
+                    <br>
+                    <h4 class="product-title">Iphone 13 promax (128 GB)</h4>
+                    <p class="product-price">$730</p>
+                    <a href="#" class="product-btn" onclick="addToCart('Iphone 13 promax (128 GB)', 730.00, 'images/iPhone-13-promax.jfif')">Add To Cart</a>
+                </div>
+            </div>
+            <div class="product">
+                <img class="m-images" src="./images/iPhone_12_promax.jpg" alt="airpod">
+                <div class="product-info">
+                    <br>
+                    <h4 class="product-title">iPhone 12 Pro Max (128GB)</h4>
+                    <p class="product-price">$375</p>
+                    <a href="#" class="product-btn" onclick="addToCart('iPhone 12 Pro Max (128GB)', 375.00, 'images/iPhone_12_promax.jpg')">Add To Cart</a>
+                </div>
+            </div>
+            <div class="product">
+                <img class="m-images" src="./images/Apple_iPad_Pro_12.9.jpg" alt="ipad">
+                <div class="product-info">
+                    <br>
+                    <h4 class="product-title">Apple iPad Pro 12.9</h4>
+                    <p class="product-price">$720</p>
+                    <a href="#" class="product-btn" onclick="addToCart('Apple iPad Pro 12.9', 720.00, 'images/Apple_iPad_Pro_12.9.jpg')">Add To Cart</a>
+                </div>
+            </div>
+            <div class="product">
+                <img class="m-images" src="./images/Samsung_Galaxy_Z_Fold2_5G.jpg" alt="airpod">
+                <div class="product-info">
+                    <br>
+                    <h4 class="product-title">Samsung Galaxy Z Fold2 5G</h4>
+                    <p class="product-price">$129</p>
+                    <a href="#" class="product-btn" onclick="addToCart('Samsung Galaxy Z Fold2 5G', 1611.00, 'images/Samsung_Galaxy_Z_Fold2_5G.jpg')">Add To Cart</a>
+                </div>
+            </div>
+            <div class="product">
+                <img class="m-images" src="./images/OnePlus_8T+5G.jpg" alt="oneplus">
+                <div class="product-info">
+                    <br>
+                    <h4 class="product-title">OnePlus 8T+ 5G</h4>
+                    <p class="product-price">$689</p>
+                    <a href="#" class="product-btn" onclick="addToCart('OnePlus 8T+ 5G', 689.40, 'images/OnePlus_8T+5G.jpg')">Add To Cart</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

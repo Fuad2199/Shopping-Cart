@@ -1,0 +1,238 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #2c3e50;
+    color: #ececec;
+}
+.topNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222; /* Darker background for more contrast */
+    padding: 1.5rem 3rem; /* Increased padding for more space */
+    color: white;
+    position: relative;
+    font-family: 'Roboto', sans-serif; /* Modern font */
+    font-size: 1.2rem; /* Larger text for better visibility */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Larger shadow for more depth */
+    z-index: 1000; /* Ensures it's on top of other elements */
+    height: 100px; /* Increased height for a more dominant appearance */
+}
+.logo {
+    color: #FFD700;
+}
+.topNav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+.nav-links li {
+    display: inline;
+    cursor: pointer;
+}
+.icons {
+    display: flex;
+    gap: 1rem;
+}
+.nav-links a:hover {
+    color: #ddd;
+}
+.search-bar input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+}
+.search-bar button {
+    background-color: #333333;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+.search-bar button:hover {
+    background-color: #777;
+}
+.icon {
+    color: white;
+    font-size: 1.25rem;
+}
+.icon:hover {
+    color: #ddd;
+}
+.fa-basket-shopping {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #9966cc;
+}
+.fa-basket-shopping:hover {
+    color: #b9f2ff
+}
+.basket-menu {
+    text-align: center;
+    z-index: 1;
+}
+/****************** SideNav for Basket ********************/
+.basket-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    background-color: #333;
+    color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 1000;
+}
+.basket-menu a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.basket-menu a:hover {
+    color: white;
+}
+#cart-items {
+    list-style-type: none;
+    padding: 0;
+}
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #444;
+    border-radius: 5px;
+    color: white;
+}
+.closeBtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+.delete-btn {
+    color: white;
+    background-color: darkred;
+    padding: 10px;
+    border-style: none;
+}
+.delete-btn:hover {
+    background-color: red;
+}
+/************************* Products ******************************/
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    padding: 15px;
+}
+.product-btn {
+    color: white;
+    text-decoration: none;
+}
+.all-products {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.product {
+    margin: 2rem;
+    overflow: hidden;
+    background: #ffffff;
+    color: #21201e;
+    text-align: center;
+    width: 240px;
+    height: 400px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.2rem;
+}
+.product .product-title, .product-price {
+    font-size: 18px;
+}
+.product:hover img {
+    scale: 1.1;
+}
+.product:hover {
+    box-shadow: 5px 15px 25px #eeeeee;
+}
+.product-img {
+    height: 200px;
+    margin: 1rem;
+    transition: all 0.3s;
+}
+.product a:link, .product a:visited {
+    color: #ececec;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #f39c12;
+    padding: 1.2rem 3rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+.product a:hover {
+    transform: scale(1.1);
+    background-color: #e67e22;
+}
+.product a:active {
+    background-color: #f39c12;
+}
+.m-images {
+    width: 200;
+    height: 200px;
+}
+#productsQuantity {
+    background-color: green;
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    right: 60px;
+    padding: 1px 3px;
+}
+  /* Responsive menu icon for smaller screens */
+.menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        top: 60px;
+        left: 0;
+        width: 100%;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .search-bar {
+        display: none;
+    }
+    .icons {
+        display: none;
+    }
+    .menu-icon {
+        display: block;
+    }
+}
